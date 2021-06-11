@@ -12,7 +12,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/josiashod/image-uploader.git">
       Solution
     </a>
     <span> | </span>
@@ -51,7 +51,7 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React.js](https://reactjs.org/)
-- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
 - [Tailwind](https://tailwindcss.com/)
 
 ## Features
@@ -68,27 +68,28 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/josiashod/image-uploader.git
 
 # Install dependencies
 $ npm install
 
 # Run the app
 
-npm run dev
+npm start && npm run dev
 # or
-yarn dev
+yarn start
 ```
 
 ## Acknowledgements
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example -->
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
+- [Upload file with express](https://www.geeksforgeeks.org/file-uploading-in-node-js/)
+- [How to create React app with NodeJs backend ](https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/)
 - [Node.js](https://nodejs.org/)
+- [react-file-drop](https://www.npmjs.com/package/react-file-drop)
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- GitHub [@josiashod](https://github.com/josiashod)
+- Twitter [@josias_hod](https://twitter.com/josias_hod)
