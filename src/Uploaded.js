@@ -63,7 +63,7 @@ export default function Uploaded ({ file, handleCopied, back }) {
         </svg>
         <h1 style={styles.h1} className="text-center mb-6" >Uploaded Successfully!</h1>
         <div className="h-64 md:h-72 mb-4 rounded-lg" style={{backgroundColor: gray[6]}}>
-            <img src={file} className="w-full mx-auto h-full rounded-lg" alt="uploaded file"/>
+            <img src={file} className="w-auto max-w-full mx-auto h-full rounded-lg" alt="uploaded file"/>
         </div>
 
         <div className="border border-gray rounded-lg flex justify-between" style={styles.linkContainer}>
