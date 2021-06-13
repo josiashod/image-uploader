@@ -41,12 +41,16 @@
 ![uploading](./overviews/uploading.png)
 ![uploaded_file](./overviews/uploaded_file.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+This is a small image uploader.
 
 - Where can I see your demo?
+ <br> here's the link: djgfhdgfh
 - What was your experience?
+<br> It was the first time i was using Node.js wit React.js
 - What have you learned/improved?
+<br> i learned how to upload an image using Node.js
 - Your wisdom? :)
+<br> After every steps don't forget to push :(
 
 ### Built With
 
@@ -72,6 +76,8 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 # Clone this repository
 $ git clone https://github.com/josiashod/image-uploader.git
 
+$ git checkout dev 
+
 # Install dependencies
 $ npm install
 
@@ -80,8 +86,7 @@ $ npm install
 npm start
 
 # And in another terminal run
-
-react-scripts start
+$ node server.js
 
 # or
 yarn start
@@ -91,7 +96,7 @@ yarn start
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example -->
 
-- [Upload file with express](https://www.geeksforgeeks.org/file-uploading-in-node-js/)
+- [Upload file with Node.js](https://www.geeksforgeeks.org/file-uploading-in-node-js/)
 - [How to create React app with NodeJs backend ](https://www.freecodecamp.org/news/how-to-create-a-react-app-with-a-node-backend-the-complete-guide/)
 - [Node.js](https://nodejs.org/)
 - [react-file-drop](https://www.npmjs.com/package/react-file-drop)
