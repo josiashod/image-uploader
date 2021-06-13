@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://josh-image-uploader.herokuapp.com/">
       Demo
     </a>
     <span> | </span>
@@ -44,7 +44,7 @@
 This is a small image uploader.
 
 - Where can I see your demo?
- <br> here's the link: djgfhdgfh
+ <br> here's the link: [demo](https://josh-image-uploader.herokuapp.com/)
 - What was your experience?
 <br> It was the first time i was using Node.js wit React.js
 - What have you learned/improved?

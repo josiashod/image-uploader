@@ -40,8 +40,6 @@ const styles = {
   }
 
 export default function Uploaded ({ file, handleCopied }) {
-    const linkUrl = React.useRef(null);
-
     const copyFileLink = () => {
         const el = document.createElement('textarea');
         el.value = file;
