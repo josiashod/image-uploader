@@ -7,6 +7,7 @@ const app = express()
 const port = process.env.PORT || 3001;
 
 // app.use(express.static(path.resolve(__dirname, './build')))
+
 app.use(cors());
 
 var storage = multer.diskStorage({
