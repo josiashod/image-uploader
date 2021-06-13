@@ -67,7 +67,7 @@ class App extends React.Component
 
 
   back = () => {
-    console.log('back')
+    // console.log('back')
     this.setState({
       file: '',
       uploading: false,
