@@ -47,35 +47,9 @@ const styles = {
       padding: "8px 16px",
       fontFamily: "'Noto sans', sans-serif"
     },
-  
-    loaderContainer: {
-      backgroundColor: gray[6],
-    },
-  
-    check:{
-      backgroundColor: "#219653",
-      color: "#ffffff",
-    },
-  
-    imageLink:{
-      fontSize: 8,
-    },
-  
-    linkContainer: {
-      padding: '2px'
-    },
-  
-    copyButton:{
-      fontSize: 12,
-      color: "#ffffff",
-      backgroundColor: "#2F80ED",
-      border: "1px solid transparent",
-      padding: "9px 22px",
-      fontFamily: "'Noto sans', sans-serif"
-    }
   }
 
-export default function Uploader ({ handleInputFile }) {
+export default function Uploader ({ handleInputFile, errorMessage }) {
   
   const fileInputRef = React.useRef(null);
 
@@ -87,16 +61,18 @@ export default function Uploader ({ handleInputFile }) {
     <h1 style={styles.h1}> Upload your image </h1>
     <span style={styles.span} >File should be Jpeg, Png,...</span>
     <FileDrop
+      className="hover:cursor-pointer"
       onTargetClick={onTargetClick}
       onDrop={(files, event) => console.log('onDrop!', files, event)}
     >
       <div 
-        className="mt-6 py-4 md:py-10 w-4/5 rounded-lg mx-auto flex flex-col justify-center space-y-6"
+        className="hover:cursor-pointer mt-6 py-4 md:py-10 w-4/5 rounded-lg mx-auto flex flex-col justify-center space-y-6"
         style={styles.uploader}
       >
         <img src={uploadImg} alt="upload" className="w-2/5 mx-auto" />
         <h1 style={styles.drag} >Drag & Drop your image here</h1>
       </div>
+      { errorMessage && <span className="text-red-400 text-xs"> { errorMessage } </span> }
     </FileDrop>
     <div style={styles.or} className="my-4" >Or</div>
 
@@ -108,7 +84,7 @@ export default function Uploader ({ handleInputFile }) {
         onChange={handleInputFile}
         ref={fileInputRef}
       />
-      <label className="mx-auto rounded-lg" for="file" style={styles.chooseFile}>Choose a file</label>
+      <label className="mx-auto rounded-lg" htmlFor="file" style={styles.chooseFile}>Choose a file</label>
     </div>
   </div>)
 }

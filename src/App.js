@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import Uploader from './Uploader.js'
 import Uploading from './Uploading.js'
+import Uploaded from './Uploaded.js'
 
 
 class App extends React.Component
@@ -11,46 +12,60 @@ class App extends React.Component
     
     this.state = {
       file: '',
-      uploading: false
+      uploading: false,
+      error: ''
     }
   }
 
   onFileInputChange = (event) => {
     const { files } = event.target;
     this.setState({
-      uploaded: true,
-      uploading: false,
+      uploading: true,
     })
+
+    this.UploadFile(files[0])
   }
 
-  UploadFile = async () => {
+  UploadFile = async (file) => {
     const form = new FormData();
-    form.append("image", );
+    form.append("image", file);
 
-    fetch("http://localhost:3001/upload", {
+    await fetch("http://localhost:3001/api/upload/", {
       "method": "POST",
-    })
-    .then(async response => {
-      if(!response.ok)
-        return Promise;
-      return response
+      body: form
     })
     .then(response => {
-      console.log(response)
+      if(!response.ok)
+        return Promise.reject(response)
+      return response.json()
+    })
+    .then(response => {
+      // console.log('response', response.file)
+      this.setState({
+        file: response.file
+      })
     })
     .catch(err => {
-      console.error(err);
+
+      err.json().then(value => {
+        value = value.replace(/\/|Error: /g,'')
+        this.setState({
+          uploading: false,
+          error: value
+        })
+      });
+
     });
   }
 
   render(){
-    const {uploading, file} = this.state
+    const {uploading, file, error} = this.state
     return (<>
-        {( !uploading && !file ) ? <Uploader handleInputFile={this.onFileInputChange} /> :(
-          (uploading && !file) ? <Uploading /> : <h1>nothing</h1>
-        ) }
-        {/* <Uploader handleInputFile={onFileInputChange} /> */}
-        {/* <Uploading /> */}
+        {/* {( !uploading && !file ) ? <Uploader handleInputFile={this.onFileInputChange} errorMessage={error} /> :(
+          (uploading && !file) ? <Uploading /> : <Uploaded file={file} />
+        ) } */}
+
+      <Uploaded />
     </>)
   }
 

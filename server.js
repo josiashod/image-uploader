@@ -11,7 +11,7 @@ app.use(cors());
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './src/images')
+      cb(null, './public')
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now() + '.' + file.originalname.split('.').pop())
@@ -42,7 +42,7 @@ var upload = multer({
 
 
 app.post('/api/upload/',  function (req, res) {
-     upload(req,res,function(err) {
+     upload(req,res,function(err, next) {
         if(err) {
   
             // ERROR occured (here it can be occured due
