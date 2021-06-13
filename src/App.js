@@ -13,7 +13,8 @@ class App extends React.Component
     this.state = {
       file: '',
       uploading: false,
-      error: ''
+      error: '',
+      copied: false
     }
   }
 
@@ -42,7 +43,7 @@ class App extends React.Component
     .then(response => {
       // console.log('response', response.file)
       this.setState({
-        file: response.file
+        file: document.location + response.file.replace('public/','')
       })
     })
     .catch(err => {
@@ -58,14 +59,28 @@ class App extends React.Component
     });
   }
 
-  render(){
-    const {uploading, file, error} = this.state
-    return (<>
-        {/* {( !uploading && !file ) ? <Uploader handleInputFile={this.onFileInputChange} errorMessage={error} /> :(
-          (uploading && !file) ? <Uploading /> : <Uploaded file={file} />
-        ) } */}
+  copiedLlink = () => {
+    this.setState({
+      copied: true
+    })
+  } 
 
-      <Uploaded />
+  componentDidUpdate(){
+    if (this.state.copied) {
+      setTimeout(() => {this.setState({copied:false})}, 3000);      
+    }
+  }
+
+  render(){
+    const { copied, uploading, file, error } = this.state
+    return (<>
+        {( !uploading && !file ) ? <Uploader handleInputFile={this.onFileInputChange} errorMessage={error} /> :(
+          (uploading && !file) ? <Uploading /> : <Uploaded file={file} handleCopied={this.copiedLlink} />
+        ) }
+
+      {/* <Uploaded handleCopied={this.copiedLlink} />  */}
+
+      <div style={{backgroundColor:"#219653"}} className={`shadow-md text-white absolute  transition-all duration-700 left-1/2 transform -translate-x-1/2 w-32 py-2 text-center rounded-lg text-sm + ${copied ? "top-6" : "-top-1/2"}`} >Link copied</div>
     </>)
   }
 
