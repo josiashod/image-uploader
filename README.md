@@ -72,6 +72,8 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 # Clone this repository
 $ git clone https://github.com/josiashod/image-uploader.git
 
+$ git checkout dev 
+
 # Install dependencies
 $ npm install
 
@@ -80,8 +82,7 @@ $ npm install
 npm start
 
 # And in another terminal run
-
-react-scripts start
+$ node server.js
 
 # or
 yarn start
