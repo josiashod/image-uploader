@@ -31,7 +31,7 @@ class App extends React.Component
     const form = new FormData();
     form.append("image", file);
 
-    await fetch("http://localhost:3001/api/upload/", {
+    await fetch("/api/upload/", {
       "method": "POST",
       body: form
     })
