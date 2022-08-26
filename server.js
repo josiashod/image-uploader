@@ -25,7 +25,7 @@ var upload = multer({
     storage: storage,
     limits: { fileSize: maxSize },
     fileFilter: function(req, file, cb){
-        var filetypes = /jpeg|jpg|png/;
+        var filetypes = /jpeg|jpg|png|gif/;
         var mimetype = filetypes.test(file.mimetype);
   
         var extname = filetypes.test(path.extname(
