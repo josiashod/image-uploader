@@ -82,6 +82,7 @@ export default function Uploader ({ handleInputFile, errorMessage }) {
         type="file" 
         name="" id="file" 
         onChange={handleInputFile}
+        accept="image/*"
         ref={fileInputRef}
       />
       <label className="mx-auto rounded-lg" htmlFor="file" style={styles.chooseFile}>Choose a file</label>
